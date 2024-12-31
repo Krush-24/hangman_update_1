@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/171/739/non_2x/gallows-with-desert-background-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;  /* Space between content and edges */
+}
+
+.container{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, 
+        rgba(76, 175, 80, 0.25),   /* Green with 25% opacity */
+        rgba(255, 152, 0, 0.40),   /* Orange with 25% opacity */
+        rgba(33, 150, 243, 0.25),  /* Blue with 25% opacity */
+        rgba(156, 39, 176, 0.30),  /* Purple with 25% opacity */
+        rgba(255, 235, 59, 0.35),  /* Light Yellow with 25% opacity */
+        rgba(248, 187, 208, 0.40)  /* Light Pink with 25% opacity */
+    );
+    background-size: 400% 400%;
+    animation: gradient-animation 2s ease infinite; /* Smooth gradient animation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 20%;
+    }
+    50% {
+        background-position: 100% 20%;
+    }
+    100% {
+        background-position: 0% 30%;
+    }
+}
+
+/* Title */
+#title{
+    width: 800px;
+    margin: auto;
+    margin-bottom: 20px;
+    /* background: linear-gradient(90deg, rgba(76, 175, 80, 0.25),rgba(255, 152, 0, 0.40),rgba(33, 150, 243, 0.25));  */
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* Rules */
+.Rules {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* List Items */
+.list li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Options Section */
+#options {
+    margin: 20px 0;
+}
+
+/* Dropdown */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin-right: 10px;
+}
+
+/* Button */
+#btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#btn:hover {
+    background: #00ff0d;
+}
+
+/* #btn{
+    margin-top: 15px;
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,black,gray,gray,black);
+    color:white;
+    font-size: large;
+    text-shadow: 3px 3px 4px white;   
+}
+
+#btn:hover{
+    background: gray;
+    color: black;
+} */
+
+#innerh1,#innerh2{
+    text-align: center;
+}
+
+#hangman{
+    height: 300px;
+    width: 300px;
+    /* border: 2px solid black; */
+    margin-left: 630px;
+}
+
+.word {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.letter {
+    border-bottom: 2px solid #333;
+    width: 40px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+    margin: 20px auto;
+}
+.key {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: aqua;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+.key:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.message {
+    font-size: 1.5em;
+    color: green;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#top-container{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000px;
+}
+
+
+/* ------------------------- Hangman Design ------------------------------ */
+
+#stick{
+    height: 320px;
+    width: 25px;
+    background: black;
+    margin-top: 10px;
+}
+
+#hr_stick{
+    height: 25px;
+    width: 250px;
+    background: black;
+    margin-top: -285px;
+}
+
+#rope{
+    height: 50px;
+    width: 5px;
+    background: black;
+    margin-left: 180px;
+    position: relative;
+}
+
+#nought{
+    height: 25px;
+    width: 25px;
+    border: 3px solid black;
+    margin-top: 50px;
+    margin-left: -12px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#hat{
+    height: 35px;
+    width: 70px;
+    background: black;
+    margin-left: 148px;
+    margin-top: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    position: relative;
+    opacity: 0;
+}
+
+#hat_line{
+    height: 15px;
+    width: 85px;
+    background: black;
+    margin-top: 30px;
+    margin-left: -8px;
+    position: absolute;
+    opacity: 0;
+}
+
+#head{
+    height: 45px;
+    width: 45px;
+    background: black;
+    margin-left: 160px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    opacity: 0;
+}
+
+#center{
+    height: 90px;
+    width: 150px;
+    /* border: 2px solid black; */
+    margin-left: 107px;
+    display: flex;
+    justify-content: center;
+}
+
+#larm{
+    height: 50px;
+    width: 5px;
+    background: black;
+    margin-top: -10px;
+    margin-right: 5px;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+#rarm{
+    height: 50px;
+    width: 5px;
+    background: black;
+    margin-top: -10px;
+    margin-left: 5px;
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+
+#cbody{
+    height: 50px;
+    width: 45px;
+    background: black;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: -15px;
+    opacity: 0;
+}
+
+#legs{
+    width: 80px;
+    margin-left: 145px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#lleg{
+    height: 40px;
+    width: 5px;
+    background: black;
+    margin-top: -6px;
+    margin-right: 5px;
+    opacity: 0;
+}
+
+#rleg{
+    height: 40px;
+    width: 5px;
+    background: black;
+    margin-top: -6px;
+    margin-right: 5px;
+    opacity: 0;
+}
+
+
+/* -------------------------- Hint Style ----------------------- */
+#dialogBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    display: none;
+}
+
+.dialog-content {
+    text-align: center;
+}
+
+#dialogBox.hidden {
+    display: none;
+}
+
+#dialogBox.active {
+    display: block;
+}
+
+#lastbtns{
+    display: flex;
+    justify-content: space-between;
+}
+
+#nextbtn{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    opacity: 0;
+}
+
+#nextbtn:hover{
+    background: #00ff0d;
+}
+
+#hint.hidden {
+    display: none;
+}
+
+#hint.active {
+    display: block;
+}

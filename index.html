@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman - Guess the Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">Hangman - Guess the Word</h1>
+    <div class="container">
+        <div class="Rules">
+            <ol class="list">
+                <li>Select the Category from the below given options</li>
+                <li>Click on submit Button</li>
+                <li>It will randomly pick one word from the selected category and you need to guess the word</li>
+                <li>There will keyboard option to select the letters</li>
+                <li>If you select the correct letter, it will print the letter in the dash</li>
+                <li>
+                    If you select a wrong letter, then there is a hang rope which will have below levels
+                    <ul>
+                        <li>Hat</li>
+                        <li>Head</li>
+                        <li>Body</li>
+                        <li>Right arm</li>
+                        <li>Left arm</li>
+                        <li>Right leg</li>
+                        <li>Left leg</li>
+                    </ul>
+                </li>
+                <li>Above the 7 chances you can save the person from hanging by finding the word correctly</li>
+                
+            </ol>
+        </div>
+        <div id="options">
+            <h3>Select the Category of words below</h3>
+            <select name="category" id="category">
+                <option value="">Select</option>
+                <option value="animals">Animal</option>
+                <option value="birds">Birds</option>
+                <option value="car">Car</option>
+                <option value="bike">Bike</option>
+            </select>
+        </div>
+        <form action="./home.html">
+            <button onclick="getCategory()" id="btn">Start the Game</button>
+        </form>
+    </div>
+    <script src="./design.js"></script>
+</body>
+</html>

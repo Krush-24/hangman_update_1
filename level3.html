@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman - Guess the Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadFunction3()">
+    <div id="top-container">
+        <button onclick="window.location.reload()" id="btn">Reset</button>
+        <h3>Time Remaining: <span id="timer">00:00</span></h3>
+    </div>
+    <div id="game">
+        <h1 id="innerh1">Start Guessing the word of category you have selected! - Level 3</h1>
+        <h2 id="innerh2">The selected category is <span id="output"></span></h2>
+        <br>
+        <div id="hangman">
+            <div id="stick"></div>
+            <div id="hr_stick"></div>
+            <div id="rope">
+                <div id="nought"></div>
+            </div>
+            <div id="hat">
+                <div id="hat_line"></div>
+            </div>
+            <div id="head"></div>
+            <div id="center">
+                <div id="larm"></div>
+                <div id="cbody"></div>
+                <div id="rarm"></div>
+            </div>
+            <div id="legs">
+                <div id="lleg"></div>
+                <div id="rleg"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="word" id="word"></div>
+    <div class="keyboard" id="keyboard"></div>
+    <div class="message">
+        <h2 id="message"></h2>
+    </div>
+    <div id="lastbtns">
+        <div id="hint" class="hidden">
+            <button onclick="handleHint2()" id="btn">Hint</button>
+        </div>
+        <form action="index.html">
+            <button id="nextbtn">Home Page</button>
+        </form>
+    </div>
+    <audio id="correct_letter" src="./success-1-6297.mp3"></audio>
+    <audio id="wrong_letter" src="./fail-234710.mp3"></audio>
+    <audio id="found" src="./success-fanfare-trumpets-6185.mp3"></audio>
+    <audio id="failed" src="./cartoon-fail-trumpet-278822.mp3"></audio>
+    <script src="./design.js"></script>
+</body>
+</html>
